@@ -1,0 +1,87 @@
+/* Board.css */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 360px;
+    margin: 20px auto;
+    background: #f5f7fa;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: background 0.5s ease; /* Transição suave para o fundo */
+}
+
+.board.winner {
+    background: linear-gradient(
+        135deg,
+        #c8e6c9 0%,
+        #a5d6a7 100%
+    ); /* Verde de vitória */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #4caf50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-family: 'Arial', sans-serif;
+    color: #2e7d32;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.cell:hover {
+    background: #e8f5e9;
+}
+
+.cell.clicked {
+    animation: clickAnimation 0.3s ease;
+}
+
+.cell.winning-cell {
+    animation: pulseWinner 1s infinite ease-in-out; /* Animação infinita de pulsar */
+    background: #81c784; /* Verde claro para destacar */
+    border-color: #2e7d32; /* Borda mais escura */
+    color: white; /* Texto branco para contraste */
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+        background: #c8e6c9;
+    }
+    50% {
+        transform: scale(0.9);
+        background: #a5d6a7;
+    }
+    100% {
+        transform: scale(1);
+        background: white;
+    }
+}
+
+@keyframes pulseWinner {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Pequeno aumento */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cell:not(:empty) {
+    cursor: default;
+}
+
+.cell:not(:empty):hover {
+    background: white; /* Mantém o fundo branco em células preenchidas, exceto vencedoras */
+}

@@ -1,0 +1,26 @@
+/* PlayAgainButton.css */
+.play-again-button {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #81c784 0%, #4caf50 100%); /* Variação do verde */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .play-again-button:hover {
+    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); /* Tons mais escuros no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  }
+  
+  .play-again-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.2);
+  }

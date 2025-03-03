@@ -1,0 +1,58 @@
+/* GameMessages.css */
+.game-message {
+    padding: 15px 25px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensagem de espera */
+.waiting-message {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: #2e7d32;
+    border: 1px solid #4caf50;
+}
+
+/* Mensagem de desconexão */
+.disconnect-message {
+    background: linear-gradient(135deg, #fffde7 0%, #f0f4c3 100%);
+    color: #33691e;
+    border: 1px solid #689f38;
+}
+
+/* Minha vez */
+.my-turn-message {
+    background: linear-gradient(
+        135deg,
+        #c8e6c9 0%,
+        #a5d6a7 100%
+    ); /* Verde mais vibrante */
+    color: #1b5e20; /* Verde escuro para contraste */
+    border: 1px solid #4caf50;
+}
+
+/* Vez do oponente */
+.opponent-turn-message {
+    background: linear-gradient(
+        135deg,
+        #dcedc8 0%,
+        #c5e1a5 100%
+    ); /* Verde mais claro */
+    color: #33691e;
+    border: 1px solid #689f38;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

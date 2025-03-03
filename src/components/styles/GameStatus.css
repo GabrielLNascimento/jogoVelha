@@ -1,0 +1,54 @@
+/* GameStatus.css */
+.game-status {
+    text-align: center;
+    padding: 15px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-status p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #2e7d32; /* Verde escuro da paleta */
+}
+
+.game-status .versus {
+    font-weight: bold;
+    color: #4caf50; /* Verde principal */
+}
+
+.game-status .player-info {
+    font-style: italic;
+}
+
+.game-status .result {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Animação para vitória */
+.game-status .result.winner {
+    animation: celebrateWin 1.5s ease infinite;
+    color: #1b5e20; /* Verde mais escuro para destaque */
+}
+
+/* Estiliza especificamente o "Empate!" */
+.game-status .result.draw {
+    color: #689f38; /* Verde médio para diferenciar */
+}
+
+@keyframes celebrateWin {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta ligeiramente */
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

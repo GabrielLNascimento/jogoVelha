@@ -1,0 +1,48 @@
+/* NameInput.css */
+.name-input-container {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.name-input-container input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.name-input-container input:focus {
+    box-shadow: 0 0 0 3px rgba(100, 149, 237, 0.3);
+}
+
+.name-input-container button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #6495ed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.name-input-container button:hover {
+    background: #4682b4;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.name-input-container button:active {
+    transform: translateY(0);
+}
