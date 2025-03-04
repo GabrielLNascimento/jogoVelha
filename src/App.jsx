@@ -8,7 +8,7 @@ import GameStatus from './components/GameStatus';
 import './components/styles/GameMessage.css';
 import './components/styles/StartButton.css';
 
-const socket = io('https://api-jogovelha.onrender.com/');
+const socket = io('https://api-jogovelha.onrender.com');
 
 function App() {
     const [status, setStatus] = useState('initial');
@@ -199,6 +199,7 @@ function App() {
                         status={status}
                         winner={winner}
                         winningCells={winningCells}
+                        player={player} // Adicionado
                     />
                 </>
             )}

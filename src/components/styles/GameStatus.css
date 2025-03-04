@@ -10,12 +10,12 @@
 .game-status p {
     margin: 10px 0;
     font-size: 18px;
-    color: #2e7d32; /* Verde escuro da paleta */
+    color: #1976d2; /* Azul escuro */
 }
 
 .game-status .versus {
     font-weight: bold;
-    color: #4caf50; /* Verde principal */
+    color: #2196f3; /* Azul médio */
 }
 
 .game-status .player-info {
@@ -30,12 +30,67 @@
 /* Animação para vitória */
 .game-status .result.winner {
     animation: celebrateWin 1.5s ease infinite;
-    color: #1b5e20; /* Verde mais escuro para destaque */
+    color: #1b5e20; /* Verde escuro */
+    background: linear-gradient(
+        135deg,
+        #c8e6c9 0%,
+        #a5d6a7 100%
+    ); /* Fundo verde */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.game-status .result.loser {
+    animation: mournLoss 1.5s ease infinite;
+    color: #b71c1c; /* Vermelho escuro */
+    background: linear-gradient(
+        135deg,
+        #ffcdd2 0%,
+        #ef9a9a 100%
+    ); /* Fundo vermelho */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.game-status .emoji {
+    display: block;
+    font-size: 40px;
+    margin: 10px auto;
+}
+
+.game-status .emoji.happy {
+    animation: pulseEmoji 1s infinite ease-in-out;
+}
+
+.game-status .emoji.sad {
+    animation: pulseEmoji 1s infinite ease-in-out;
 }
 
 /* Estiliza especificamente o "Empate!" */
 .game-status .result.draw {
     color: #689f38; /* Verde médio para diferenciar */
+}
+
+.game-status.shake {
+    animation: shakeEffect 0.5s ease infinite;
+}
+
+@keyframes shakeEffect {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 @keyframes celebrateWin {
@@ -50,5 +105,29 @@
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes mournLoss {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseEmoji {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
     }
 }

@@ -12,9 +12,25 @@
 
 /* Mensagem de espera */
 .waiting-message {
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-    color: #2e7d32;
-    border: 1px solid #4caf50;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1976d2;
+    border: 1px solid #2196f3;
+    position: relative;
+    padding-right: 40px; /* Espaço para o spinner */
+}
+
+.waiting-message::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid #2196f3;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
 /* Mensagem de desconexão */
@@ -28,22 +44,22 @@
 .my-turn-message {
     background: linear-gradient(
         135deg,
-        #c8e6c9 0%,
-        #a5d6a7 100%
-    ); /* Verde mais vibrante */
-    color: #1b5e20; /* Verde escuro para contraste */
-    border: 1px solid #4caf50;
+        #bbdefb 0%,
+        #90caf9 100%
+    ); /* Azul claro */
+    color: #1976d2;
+    border: 1px solid #2196f3;
 }
 
 /* Vez do oponente */
 .opponent-turn-message {
     background: linear-gradient(
         135deg,
-        #dcedc8 0%,
-        #c5e1a5 100%
-    ); /* Verde mais claro */
-    color: #33691e;
-    border: 1px solid #689f38;
+        #e3f2fd 0%,
+        #bbdefb 100%
+    ); /* Azul mais claro */
+    color: #1976d2;
+    border: 1px solid #42a5f5;
 }
 
 @keyframes fadeIn {
@@ -54,5 +70,14 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
     }
 }
